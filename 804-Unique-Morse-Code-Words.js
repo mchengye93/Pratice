@@ -50,7 +50,6 @@ var uniqueMorseRepresentations = function(words) {
           
             result += alphaMorse[alphabetArr.indexOf(word[x])];
         }
-        console.log(result);
         if (morseArr.indexOf(result) === -1) {
             diffMorse++;
             morseArr.push(result);
