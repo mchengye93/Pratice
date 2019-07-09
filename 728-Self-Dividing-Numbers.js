@@ -26,8 +26,27 @@ The boundaries of each input argument are 1 <= left <= right <= 10000.
  * @return {number[]}
  */
 var selfDividingNumbers = function(left, right) {
-    for (var i = left; i <= right; i++){
-        
+    var selfDivisibleNums = [];
+    for (var i = left; i <= right; i++) { 
+        var str = i +'';
+        var arr = str.split('');
+    
+        var divisible = true;
+        if (arr.indexOf('0') !== -1) {
+            divisible = false;
+        }
+        for (var x = 0; x < arr.length;x++) {
+            if ( i % arr[x] !== 0) {
+                divisible = false;
+            }
+        }
+        if( divisible) {
+            selfDivisibleNums.push(i);
+            
+        }
+
     }
+    
+    return selfDivisibleNums
     
 };
