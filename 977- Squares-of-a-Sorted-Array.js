@@ -24,5 +24,12 @@ A is sorted in non-decreasing order.
  * @return {number[]}
  */
 var sortedSquares = function(A) {
+    var squared = [];
+    for (var i = 0; i < A.length; i++) {
+        squared.push(A[i]*A[i]);
+    }
+
+    return squared.sort((a,b) => a-b );
+    
     
 };
