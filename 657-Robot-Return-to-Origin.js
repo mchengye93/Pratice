@@ -36,5 +36,29 @@ Explanation: The robot moves left twice. It ends up two "moves" to
  * @return {boolean}
  */
 var judgeCircle = function(moves) {
+    var coordinates = [0,0];
     
+    for (var i = 0; i < moves.length; i++) {
+        if (moves[i] === 'U') {
+            coordinates[0] += 1;
+        }
+        
+        if (moves[i] === 'D') {
+            coordinates[0] -= 1;
+        }
+        
+        if (moves[i] ==='L') {
+            coordinates[1] +=1;
+            
+        }
+        
+        if (moves[i] === 'R'){
+            coordinates[1] -=1;
+        }
+    }
+    
+    if (coordinates[0] !== 0 || coordinates[1] !== 0) {
+        return false;
+    }
+    return true;
 };
