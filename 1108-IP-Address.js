@@ -13,6 +13,21 @@
  * @return {string}
  */
 var defangIPaddr = function(address) {
-    return address.split('.').join('[.]');
+    //return address.split('.').join('[.]');  <--- less efficient
+    //return address.replace(/\./g,"[.]");   <---less efficient
     
+
+    //More efficient solution
+    var result = '';
+
+    for (var i = 0; i < address.length; i++) {
+        if(address[i] === '.') {
+            result += '[.]';
+        } else {
+            result += address[i];
+        }
+        
+    }
+    return result;
+
 };
