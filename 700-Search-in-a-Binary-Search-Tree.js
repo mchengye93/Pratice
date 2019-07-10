@@ -25,3 +25,33 @@ In the example above, if we want to search the value 5, since there
 Note that an empty tree is represented by NULL, therefore you would
  see the expected output (serialized tree format) as [], not null.
  */
+
+ /**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} val
+ * @return {TreeNode}
+ */
+var searchBST = function(root, val) {
+
+    if (root.val === val) {
+        return root;
+    }
+    
+    if(root.left !== null) {
+        return searchBST(root.left,val);
+    }
+    if(root.right !== null) {
+        return searchBST(root.right,val);
+    }
+
+    return null;
+
+    
+};
