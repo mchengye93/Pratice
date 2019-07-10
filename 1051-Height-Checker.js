@@ -25,5 +25,15 @@ Note:
  * @return {number}
  */
 var heightChecker = function(heights) {
+    var count = 0;
+    
+    var correct = heights.slice().sort((a,b) => a-b);
+ 
+    for (var i = 0 ; i < heights.length;i++) {
+        if(correct[i]!== heights[i]) {
+            count++;
+        }
+    }
+    return count;
     
 };
