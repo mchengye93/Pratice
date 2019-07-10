@@ -22,5 +22,20 @@ Note:
  * @return {number[]}
  */
 var sortArrayByParity = function(A) {
+    var arrPar = [];
+    //first add all even first
+    for (var i = 0; i < A.length;i++){
+        if(A[i]%2 === 0) {
+            arrPar.push(A[i]);
+        }
+    }
+    //then add all odd
+    for (var i = 0; i < A.length;i++){
+        if(A[i]%2 !== 0) {
+            arrPar.push(A[i]);
+        }
+    }
+    return arrPar;
+
     
 };
