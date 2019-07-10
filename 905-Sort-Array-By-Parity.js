@@ -36,6 +36,5 @@ var sortArrayByParity = function(A) {
         }
     }
     return arrPar;
-
     
 };
