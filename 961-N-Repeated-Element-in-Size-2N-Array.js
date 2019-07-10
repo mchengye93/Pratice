@@ -22,5 +22,10 @@ Output: 5
  * @return {number}
  */
 var repeatedNTimes = function(A) {
-    
+    for (var i = 0; i < A.length; i++) {
+        var num = A[i];
+        if (A.lastIndexOf(num) > i) {
+            return num;
+        }
+    }
 };
