@@ -17,3 +17,30 @@ Note:
 2 <= A.length <= 20000
 A.length % 2 == 0
 0 <= A[i] <= 1000
+*/
+/**
+ * @param {number[]} A
+ * @return {number[]}
+ */
+var sortArrayByParityII = function(A) {
+    var even = [];
+    var odd = [];
+    
+    var evenOddArr = [];
+    for (var i = 0; i < A.length;i++){
+        if (A[i]%2=== 0) {
+            even.push(A[i]);
+        } else {
+            odd.push(A[i]);
+        }
+    }
+    
+    for (var i= 0; i < A.length;i++) {
+        if (i%2 === 0){
+            evenOddArr.push(even.pop());
+        } else {
+            evenOddArr.push(odd.pop());
+        }
+    }
+    return evenOddArr;
+};
