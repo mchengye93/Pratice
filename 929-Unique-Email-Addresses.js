@@ -44,5 +44,32 @@ Local names do not start with a '+' character.
  * @return {number}
  */
 var numUniqueEmails = function(emails) {
+    var uniqueEmails = {};
+    var uniqueCount = 0;
     
+    for (var i= 0; i < emails.length; i++) {
+        var email = emails[i];
+        
+        
+        var localName = email.slice(0, email.indexOf('@'));
+        var normLocalName = localName.split('.').join('');
+        
+        
+        var rmPlus = normLocalName.indexOf('+');
+        
+        if(rmPlus !== -1) {
+            normLocalName = normLocalName.slice(0,rmPlus);
+        }
+        
+        var domainName = email.slice(email.indexOf('@'));
+        
+        var uniqueEmail = normLocalName + domainName;
+        
+        
+        if (uniqueEmails[uniqueEmail] === undefined){
+            uniqueEmails[uniqueEmail] = 1;
+            uniqueCount++;
+         }
+    }
+    return uniqueCount;
 };
