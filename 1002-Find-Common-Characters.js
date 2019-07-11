@@ -22,3 +22,10 @@ Note:
 1 <= A[i].length <= 100
 A[i][j] is a lowercase letter
 */
+/**
+ * @param {string[]} A
+ * @return {string[]}
+ */
+var commonChars = function(A) {
+    
+};
