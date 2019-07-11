@@ -21,3 +21,18 @@ Note:
 0 <= A[i] <= 10^6
 A is a mountain, as defined above.
 */
+/**
+ * @param {number[]} A
+ * @return {number}
+ */
+var peakIndexInMountainArray = function(A) {
+    var maxIdx = 0;
+    var highestPoint = A[0];
+    for (var i = 1; i < A.length; i++){
+        if (A[i]> highestPoint){
+            highestPoint = A[i];
+            maxIdx= i;
+        }
+    }
+    return maxIdx;
+};
