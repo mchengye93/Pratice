@@ -34,5 +34,20 @@ S only contains characters "I" or "D".
  * @return {number[]}
  */
 var diStringMatch = function(S) {
+    var end = S.length;
+    var start = 0;
+    
+    var result = [];
+    for (var i= 0; i <= S.length;i++){
+        if (S[i]=== 'I') {
+            result.push(start);
+            start = start + 1;
+        } else {
+            result.push(end);
+            end = end - 1;
+        }
+
+    }
+    return result;
     
 };
