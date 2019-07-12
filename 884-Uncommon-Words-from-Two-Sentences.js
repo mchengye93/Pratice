@@ -29,5 +29,29 @@ A and B both contain only spaces and lowercase letters.
  * @return {string[]}
  */
 var uncommonFromSentences = function(A, B) {
+    var uncommon = {};
     
-};
+    var a = A.split(' ');
+    var b = B.split(' ');
+    
+    for (var i= 0; i < a.length ; i++) {
+        if (uncommon[a[i]] === undefined){
+            uncommon[a[i]] = 1;
+        }
+        
+        else if (uncommon[a[i]] === 1) {
+            delete uncommon[a[i]];
+        }
+        
+    }
+    for (var i= 0; i < b.length ; i++) {
+        if (uncommon[b[i]] === undefined){
+            uncommon[b[i]] = 1;
+        }
+        else if (uncommon[b[i]]) {
+            delete uncommon[b[i]];
+        }
+    }
+    
+    return Object.keys(uncommon);
+}
