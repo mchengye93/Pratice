@@ -21,3 +21,17 @@ Note:
 
 The number of nodes in the given list will be between 1 and 100.
 */
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function(head) {
+  
+};
