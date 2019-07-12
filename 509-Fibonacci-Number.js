@@ -25,3 +25,20 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
 Note:
 0 ≤ N ≤ 30. */
+
+/**
+ * @param {number} N
+ * @return {number}
+ */
+var fib = function(N) {
+    if (N === 0 ) {
+        return 0;
+        
+    } 
+    
+    if (N===1) {
+        return 1;
+    }
+    return fib(N-1) + fib(N-2);
+    
+};
