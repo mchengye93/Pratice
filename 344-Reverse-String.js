@@ -23,5 +23,11 @@ Output: ["h","a","n","n","a","H"]
  * @return {void} Do not return anything, modify s in-place instead.
  */
 var reverseString = function(s) {
+    //swap first with last, second with second last
+    for (var i = 0; i < Math.min(s.length/2) ; i++) {
+        var temp = s[i];
+        s[i] = s[s.length-(i+1)];
+        s[s.length-(i+1)] = temp;
     
+    }
 };
