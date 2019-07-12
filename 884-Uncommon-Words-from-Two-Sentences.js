@@ -23,3 +23,11 @@ Note:
 0 <= B.length <= 200
 A and B both contain only spaces and lowercase letters.
 */
+/**
+ * @param {string} A
+ * @param {string} B
+ * @return {string[]}
+ */
+var uncommonFromSentences = function(A, B) {
+    
+};
