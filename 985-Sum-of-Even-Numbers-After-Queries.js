@@ -30,3 +30,28 @@ Note:
 -10000 <= queries[i][0] <= 10000
 0 <= queries[i][1] < A.length
 */
+/**
+ * @param {number[]} A
+ * @param {number[][]} queries
+ * @return {number[]}
+ */
+var sumEvenAfterQueries = function(A, queries) {
+    var sumOfEven = [];
+    for (var i = 0; i < queries.length; i++) {
+        var index = queries[i][1];
+        var add = queries[i][0];
+        
+        A[index] += add;
+        var evenSum = 0;
+        for (var x = 0; x < A.length; x++) {
+           
+            if (A[x]%2 === 0) {
+                evenSum += A[x];
+            }
+        }
+        
+        sumOfEven.push(evenSum);
+    }
+    return sumOfEven;
+    
+};
