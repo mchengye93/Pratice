@@ -22,3 +22,33 @@ S.length <= 100
 33 <= S[i].ASCIIcode <= 122 
 S doesn't contain \ or "
 */
+/**
+ * @param {string} S
+ * @return {string}
+ */
+var reverseOnlyLetters = function(S) {
+    var start = 0;
+    var end = S.length-1;
+    while(start !== Math.min(S.length/2) && end !== Math.min(S.length/2)) {
+        //if either is not a letter move to a letter position
+        while (S[start] === '-'){
+            start = start + 1;
+        }
+
+        while(S[end] === '-') {
+            end = end-1;
+        }
+       
+        var temp = S[start];
+        
+        S[start] = S[end];
+        S[end] = temp;
+
+        start = start + 1;
+        end = end -1;
+        
+    }
+    console.log(S);
+};
+
+reverseOnlyLetters("ab-cd");
