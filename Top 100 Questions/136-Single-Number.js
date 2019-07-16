@@ -21,5 +21,14 @@ Output: 4
  * @return {number}
  */
 var singleNumber = function(nums) {
+    var noDuplicate = {};
     
+    for (var i = 0; i < nums.length; i++){
+        if (noDuplicate[nums[i]] === undefined){
+            noDuplicate[nums[i]] = 1;
+        } else {
+            delete noDuplicate[nums[i]];
+        }
+    }
+    return Object.keys(noDuplicate)[0];
 };
