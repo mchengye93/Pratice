@@ -24,3 +24,11 @@ Note:
 Both strings' lengths will not exceed 100.
 Only letters from a ~ z will appear in input strings.
 */
+/**
+ * @param {string} a
+ * @param {string} b
+ * @return {number}
+ */
+var findLUSlength = function(a, b) {
+    
+};
