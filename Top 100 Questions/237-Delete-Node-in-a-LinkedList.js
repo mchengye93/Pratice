@@ -29,3 +29,21 @@ The given node will not be the tail and it will always be a valid node of
 the linked list.
 Do not return anything from your function.
 */
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
+ */
+var deleteNode = function(node) {
+    //Assume we will always be given a node that is in singly linkedList
+    
+    node.val = node.next.val;
+    node.next = node.next.next;
+    
+};
