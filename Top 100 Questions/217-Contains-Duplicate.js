@@ -17,3 +17,19 @@ Example 3:
 Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
 */
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    var count = {};
+    
+    for (var i= 0; i < nums.length;i++) {
+        if (count[nums[i]] !== undefined) {
+            return true;
+        } else {
+            count[nums[i]] = 1;
+        }
+    }
+    return false;
+};
