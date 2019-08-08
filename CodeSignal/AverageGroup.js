@@ -65,3 +65,54 @@ Guaranteed constraints:
 An array of arrays, representing the groups of indices.
 
 */
+function meanGroups(a) {
+    
+    var avgGroup = [];
+    
+    var currentAvg = 0;
+    
+    var alreadyUsedIdx = [];
+    
+    for (var i = 0; i < a.length; i++) {
+        
+        var sameAvgGroup = [];
+        var currentArr = a[i];
+        var currentAvg = 0;
+        var currentSum = 0;
+        
+        for (var x = 0; x < currentArr.length; x++) {
+           currentSum += currentArr[x];
+        }
+        currentAvg = currentSum/currentArr.length;
+        
+        if (alreadyUsedIdx.indexOf(i) === -1) {
+                 alreadyUsedIdx.push(i);
+                 sameAvgGroup.push(i);
+        
+        
+        for (var y = i+1; y < a.length; y++) {
+            var nextArr = a[y];
+            var nextAvg = 0;
+            var nextSum = 0;
+            
+            for (var l = 0; l < nextArr.length; l++) {
+                nextSum += nextArr[l];
+                
+            }
+            nextAvg = nextSum/nextArr.length;
+            
+            if (nextAvg === currentAvg) {
+                sameAvgGroup.push(y);
+                alreadyUsedIdx.push(y);
+            }
+            
+        }
+        avgGroup.push(sameAvgGroup);
+            
+        }
+   
+        
+    }
+    return avgGroup;
+
+}
