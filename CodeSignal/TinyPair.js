@@ -43,3 +43,18 @@ Guaranteed constraints:
 [output] integer
 The number of tiny pairs during the iteration.
 */
+function countTinyPairs(a, b, k) {
+
+    var tinyPair = 0
+    var x = b.length-1;
+    for (var i = 0; i < a.length;i++) {
+        var xy = a[i] + ''+b[x];
+       
+        x--;
+        if (xy < k) {
+            tinyPair++;
+        }
+    }
+    return tinyPair;
+
+}
