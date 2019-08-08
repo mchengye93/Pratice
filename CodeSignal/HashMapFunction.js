@@ -52,3 +52,37 @@ query.length = queryType.length,
 The sum of the results for all get queries.
 
 */
+function hashMap(queryType, query) {
+    var result = {};
+    var getSum = 0;
+    for (var i = 0; i < queryType.length;i++) {
+        var queryInput = query[i];
+        switch (queryType[i]) {
+            case 'insert':
+                result[queryInput[0]] = queryInput[1];
+                break;
+            case 'addToValue':
+                for (var key in result) {
+                    result[key] += queryInput[0];
+                }
+                break;
+            case 'addToKey':
+                var newResult = {};
+                for (var key in result) {
+                    var keyVal = result[key];
+                    var newKey = parseInt(key) + queryInput[0];
+
+                    newResult[newKey] = keyVal;
+                }
+                result = newResult;
+                break;
+            case 'get':
+                getSum +=result[queryInput[0]];
+                break;
+        }
+                            
+
+    }
+    return getSum;
+    
+}
