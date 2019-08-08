@@ -24,3 +24,17 @@ Guaranteed constraints:
 
 true if inputString is a palindrome, false otherwise.
 */
+function checkPalindrome(inputString) {
+    
+    var mid = Math.floor(inputString.length/2);
+    var end = inputString.length-1;
+    for (var i = 0; i < mid; i++) {
+        if(inputString[i] !== inputString[end]) {
+            return false;
+        }
+        end--;
+        
+        
+    }
+    return true;
+}
