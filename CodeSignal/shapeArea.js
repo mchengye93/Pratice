@@ -27,3 +27,13 @@ Guaranteed constraints:
 
 The area of the n-interesting polygon.
 */
+function shapeArea(n) {
+    if (n === 1) {
+        return 1;
+    }
+    var polygonArr = [1];
+    for (var i = 2; i <= n; i++) {
+        polygonArr.push(polygonArr[i-2] + (i-1)*4 );
+    }
+    return polygonArr[n-1];
+}
