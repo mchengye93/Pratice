@@ -25,3 +25,17 @@ Guaranteed constraints:
 
 The largest product of adjacent elements.
 */
+function adjacentElementsProduct(inputArray) {
+    var maxProduct = -Infinity;
+    
+    for (var i = 0; i < inputArray.length-1; i++) {
+        var current = inputArray[i];
+        var next = inputArray[i+1];
+        
+        var product = current*next;
+        if (product > maxProduct) {
+            maxProduct = product;
+        }
+    }
+    return maxProduct;
+}
