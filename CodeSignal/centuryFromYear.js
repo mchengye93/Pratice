@@ -23,3 +23,15 @@ Guaranteed constraints:
 
 The number of the century the year is in.
 */
+function centuryFromYear(year) {
+    var century = year/100;
+    
+    if (century > Math.round(century)){
+      return Math.round(century) + 1;
+    }
+    else {
+      return Math.round(century);
+    }
+      
+  }
+  
