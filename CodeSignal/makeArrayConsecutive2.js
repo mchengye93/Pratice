@@ -29,3 +29,29 @@ Guaranteed constraints:
 The minimal number of statues that need to be added to existing statues such that it contains every 
 integer size from an interval [L, R] (for some L, R) and no other sizes.
 */
+function makeArrayConsecutive2(statues) {
+    var sortedStatues = statues.sort((a,b) => a-b);
+    console.log(sortedStatues);
+    
+    var newSorting = [sortedStatues[0]];
+    var addition =0;
+    for (var i= 0; i < sortedStatues.length-1; i++) {
+        var current = sortedStatues[i];
+        var next = sortedStatues[i+1];
+        
+        
+        var diffCurrent = next-current;
+        if (diffCurrent === 1) {
+            current = next;
+            newSorting.push(next);
+        } else {
+            while (diffCurrent !== 1) {
+                newSorting.push(current+1);
+                addition++;
+                current = current + 1;
+                diffCurrent = next-current;
+            }
+        }
+    }
+    return addition;
+}
