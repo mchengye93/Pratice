@@ -72,6 +72,10 @@ var subdomainVisits = function(cpdomains) {
             
         }
     }
-    console.log(domains);
-};
+    let countsArr = [];
+    for (key in domains) {
+        countsArr.push(domains[key] + ' ' + key);
+    }
+    return countsArr;
+   
 };
