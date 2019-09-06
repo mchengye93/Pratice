@@ -54,9 +54,24 @@ var subdomainVisits = function(cpdomains) {
         let count = cpdomains[i].split(' ')[0] ;
         
         let url = cpdomains[i].split(' ')[1];
-        let 
+        
+        let subDomains = url.split('.');
+        //console.log(subDomains);
         
         domains[url] = parseInt(count);
+        
+        for (let i = 1; i < subDomains.length; i++) {
+            let subDomain = subDomains.slice(i).join('.');
+           
+            if (domains[subDomain]) {
+                domains[subDomain] += parseInt(count);
+            } else {
+                domains[subDomain] = parseInt(count);
+            }
+            
+            
+        }
     }
     console.log(domains);
+};
 };
