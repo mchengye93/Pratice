@@ -41,3 +41,22 @@ Each address will have either 1 or 2 "." characters.
 The input count in any count-paired domain will not exceed 10000.
 The answer output can be returned in any order.
 */
+/**
+ * @param {string[]} cpdomains
+ * @return {string[]}
+ */
+var subdomainVisits = function(cpdomains) {
+    let domains = {};
+    
+    for (let i = 0; i < cpdomains.length; i++) {
+        let domain = cpdomains[i];
+    
+        let count = cpdomains[i].split(' ')[0] ;
+        
+        let url = cpdomains[i].split(' ')[1];
+        let 
+        
+        domains[url] = parseInt(count);
+    }
+    console.log(domains);
+};
