@@ -20,3 +20,22 @@ S and J will consist of letters and have length at most 50.
 The characters in J are distinct.
 
 */
+/**
+ * @param {string} J
+ * @param {string} S
+ * @return {number}
+ */
+var numJewelsInStones = function(J, S) {
+    var jewels = {};
+    var jewelsCount = 0;
+    for (let i = 0 ; i < J.length; i++ ) {
+        jewels[J[i]] = 1;
+    }
+    
+    for (let i = 0; i < S.length; i++) {
+        if(jewels[S[i]] !== undefined) {
+            jewelsCount++;
+        }
+    }
+    return jewelsCount;
+};
