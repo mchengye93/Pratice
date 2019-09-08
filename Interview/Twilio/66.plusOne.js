@@ -23,15 +23,20 @@ Explanation: The array represents the integer 4321.
 var plusOne = function(digits) {
     
     for(var i = digits.length; i--;){
+        
+        //start with last row and add 1
         digits[i] = 1 + digits[i];
         
+        //if reaches 10 then current becomes 0 and add one to next
         if(digits[i] === 10){
             digits[i] = 0;
         } else {
+            //if not 10 then we can return digit
             return digits;
         }
     }
     
+    //we kept adding 1 until we reached last so we need to add 1 to front
     digits.unshift(1);
     
     
