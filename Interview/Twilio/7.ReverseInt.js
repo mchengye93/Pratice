@@ -23,6 +23,6 @@ assume that your function returns 0 when the reversed integer overflows.
  * @return {number}
  */
 var reverse = function(n) {
-    n = n +'';
-    return n.split('').reverse().join('');
+    let m = n +'';
+    return m.split('').reverse().join('');
 };
