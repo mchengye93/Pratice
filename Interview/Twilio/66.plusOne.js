@@ -16,3 +16,22 @@ Input: [4,3,2,1]
 Output: [4,3,2,2]
 Explanation: The array represents the integer 4321.
 */
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function(digits) {
+    
+    let num = parseInt(digits.join('')) + 1;
+    console.log(digits);
+    console.log(num);
+    
+    let digit = num.toString();
+    let result = [];
+    
+    for (let i = 0; i < digit.length; i++) {
+        result.push(parseInt(digit[i]));
+    }
+   
+    return result;
+};
