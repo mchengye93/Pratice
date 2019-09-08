@@ -23,3 +23,28 @@ Example 3:
 Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
 Output: false
 */
+
+/**
+ * @param {string} s
+ * @param {string[]} wordDict
+ * @return {boolean}
+ */
+var wordBreak = function(s, wordDict) {
+    let word = '';
+    
+    for (let i = 0; i < s.length;i++) {
+        for (let x = i+1; x < s.length+1; x++) {
+            //console.log('currentSubstring', i,x);
+            //console.log(s.substring(i,x));
+            if(wordDict.includes(s.substring(i,x))) {
+                //console.log(i,x);
+                
+                console.log(s.substring(i,x));
+                word += s.substring(i,x);
+                i = x;
+            }
+        }
+        
+    }
+    return word === s;
+};
