@@ -29,9 +29,7 @@ var longestPalindrome = function(s) {
                 palindromeWord = word;
             }
         }
-        if (palindromeWord.length === s.length) {
-            break;
-        }
+    
     }
     return palindromeWord;
 };
