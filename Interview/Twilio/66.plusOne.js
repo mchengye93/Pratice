@@ -22,16 +22,18 @@ Explanation: The array represents the integer 4321.
  */
 var plusOne = function(digits) {
     
-    let num = parseInt(digits.join('')) + 1;
-    console.log(digits);
-    console.log(num);
-    
-    let digit = num.toString();
-    let result = [];
-    
-    for (let i = 0; i < digit.length; i++) {
-        result.push(parseInt(digit[i]));
+    for(var i = digits.length; i--;){
+        digits[i] = 1 + digits[i];
+        
+        if(digits[i] === 10){
+            digits[i] = 0;
+        } else {
+            return digits;
+        }
     }
-   
-    return result;
+    
+    digits.unshift(1);
+    
+    
+    return digits;
 };
