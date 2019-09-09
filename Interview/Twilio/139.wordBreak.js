@@ -30,21 +30,27 @@ Output: false
  * @return {boolean}
  */
 var wordBreak = function(s, wordDict) {
-    let word = '';
+   
+
+    var possible = [];
+    possible[0] = true;
     
-    for (let i = 0; i < s.length;i++) {
-        for (let x = i+1; x < s.length+1; x++) {
-            //console.log('currentSubstring', i,x);
-            //console.log(s.substring(i,x));
-            if(wordDict.includes(s.substring(i,x))) {
-                //console.log(i,x);
-                
-                console.log(s.substring(i,x));
-                word += s.substring(i,x);
-                i = x;
+    for(var i = 0; i < s.length; i++) {
+        
+        //if previous index found possible word on index move forward onto next word
+        if(possible[i]) {
+            //find if it is possible to find wordDict from i to j
+            for(var j = i + 1; j <= s.length; j++) {
+                var str = s.substring(i, j);
+
+                //if word exist we mark index of possible words to be true
+                if(wordDict.indexOf(str) !== -1) {
+                    possible[j] = true;
+                }
             }
         }
-        
     }
-    return word === s;
+    
+    //if we can get to last index of string with words that are true then we have possible word
+    return possible[s.length] === true;
 };
