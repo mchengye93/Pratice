@@ -23,26 +23,25 @@ Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
  * @return {number}
  */
 var numDecodings = function(s) {
-    
-    
-    //if empty string or start with 0 cannot decode
-    if (s == "" || s [0] == "0") {
-            return 0
-    }
-    let dp = [1, 1];
 
-    for (let i = 2; i < s.length + 1; i++) {
+    if (s.length === 0 || s[0]==='0') {
+        return 0;
+    }
+    let dp = [1,1];
+    
+    for (let i = 2; i < s.length+1; i++) {
         let result = 0;
-        let num =  parseInt(s.slice(i - 2, i));
-        if (num >=10  && num <= 26) {
-          result = dp[i - 2];
+        let num = parseInt(s.slice(i-2,i));
+        
+        if (num >= 10 && num <= 26) {
+            result = dp[i-2];
         }
-        if (s[i - 1] != "0") {
-          result += dp[i - 1];
+        if (s[i-1] != '0') {
+            result += dp[i-1];
         }
         dp.push(result);
-      }
-      return dp[s.length];
+    }
+    return dp[s.length];
     
 
 };
