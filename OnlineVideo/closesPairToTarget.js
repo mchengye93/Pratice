@@ -34,7 +34,7 @@ function pairsToTarget(arr1, arr2, target) {
     let minNum = Number.MAX_SAFE_INTEGER;
     for (var key in diffPairs) {
         let num = parseInt(key);
-        if (num < minKeys) {
+        if (num < minNum) {
             minNum = num;
         }
     }
