@@ -39,6 +39,11 @@ function pairsToTarget(arr1, arr2, target) {
         }
     }
     return diffPairs[minNum];
-   
 
 }
+//Test result
+let arr1 = [-1,3,8,2,9,5];
+let arr2 = [4,1,2,10,5,20];
+let target= 24;
+
+console.log(pairsToTarget(arr1,arr2,target));
