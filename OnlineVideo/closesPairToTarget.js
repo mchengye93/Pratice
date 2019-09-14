@@ -12,3 +12,7 @@ E: None
 //Find minium key values and return value which should be a list of pairs with 
 min difference to target
 */
+
+function pairsToTarget(arr1, arr2, target) {
+    
+}
