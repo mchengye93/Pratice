@@ -6,12 +6,12 @@ function longestConsecutiveLetter(string) {
     //Go through each letter and find longest consecutive letter
     let maxCount = Number.MIN_SAFE_INTEGER;
     let maxLetter = '';
-    let currentLetter = string[0];
+    let prevLetter = string[0];
     let currentCount = 1;
     for (let i = 1; i < string.length; i++) {
         let letter = string[i];
       
-        if (currentLetter === letter) {
+        if (prevLetter === letter) {
             currentCount++;
             if (currentCount > maxCount) {
                 maxCount = currentCount;
@@ -19,7 +19,7 @@ function longestConsecutiveLetter(string) {
                
             }
         } else {
-            currentLetter = letter;
+            prevLetter = letter;
             currentCount = 1;
         }
 
