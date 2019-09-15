@@ -13,17 +13,18 @@ function multToTarget(array, target) {
         }
     }
     //check to see if you can give the other divisor
+    let pairs = [];
     for (let key in divisibleNums) {
         let multiple = divisibleNums[key];
         let multNum = target/multiple;
 
          //if found return pair
         if (divisibleNums[multNum]) {
-            return [divisibleNums[key], multNum];
+            pairs.push([divisibleNums[key], multNum]);
         }
     }
-    return -1;
+    return pairs;
 
 }
 let arr = [1,7,8,9,4,3,10,5];
-console.log(multToTarget(arr,20)); // [4,5];
+console.log(multToTarget(arr,20)); // [[4,5] , [5,4]];
