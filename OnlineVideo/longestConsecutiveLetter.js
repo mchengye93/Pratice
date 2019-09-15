@@ -8,14 +8,15 @@ function longestConsecutiveLetter(string) {
     let maxLetter = '';
     let currentLetter = string[0];
     let currentCount = 1;
-    for (let i = 0; i < string.length; i++) {
+    for (let i = 1; i < string.length; i++) {
         let letter = string[i];
-        
+      
         if (currentLetter === letter) {
             currentCount++;
             if (currentCount > maxCount) {
                 maxCount = currentCount;
                 maxLetter = letter;
+               
             }
         } else {
             currentLetter = letter;
@@ -23,6 +24,7 @@ function longestConsecutiveLetter(string) {
         }
 
     }
+   
     return maxLetter + ' : '+ maxCount;
 }
 let string = 'AABCDDBBBEA';
