@@ -24,7 +24,7 @@ function maxSubarray (array) {
             }
         }
     }
-    console.log(startIndex, endIndex);
+    console.log(array.slice(startIndex, endIndex+1));
     return maxSum;
 }
 
