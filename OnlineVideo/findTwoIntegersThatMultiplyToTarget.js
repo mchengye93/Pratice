@@ -8,7 +8,7 @@ function multToTarget(array, target) {
     let divisibleNums = {};
     for (let i = 0; i < array.length; i++) {
         let num = array[i];
-
+        console.log(num);
         if ( (target% num)  === 0) {
             divisibleNums[num] = num;
             let multiple = target/num;
