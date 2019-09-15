@@ -19,10 +19,11 @@ function multToTarget(array, target) {
 
          //if found return pair
         if (divisibleNums[multNum]) {
-            return [multNum, key];
+            return [divisibleNums[key], multNum];
         }
     }
     return -1;
-   
 
 }
+let arr = [1,7,8,9,4,3,10,5];
+console.log(multToTarget(arr,20)); // [4,5];
