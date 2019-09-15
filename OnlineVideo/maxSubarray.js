@@ -27,3 +27,6 @@ function maxSubarray (array) {
     console.log(startIndex, endIndex);
     return maxSum;
 }
+
+let array = [1,-3,2,1,-1];
+console.log(maxSubarray(array));
