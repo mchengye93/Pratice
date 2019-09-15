@@ -28,3 +28,6 @@ function firstNonRecurringChar(string) {
     return null;
     
 }
+
+let string = 'aaccbfggjhjhrbrbfkersurdsk' 
+console.log(firstNonRecurringChar(string)); //e
