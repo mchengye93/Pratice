@@ -30,7 +30,8 @@ Given an array find maxium continous subarray
 
 //Using kadane algorightm
 function maxSubarray (array) {
-    let maxSum, maxCurrent = array[0];
+    let maxSum = array[0];
+    let maxCurrent = array[0];
 
     for (let i = 1; i < array.length; i++) {
         maxCurrent = Math.max(array[i], maxCurrent + array[i]);
