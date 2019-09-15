@@ -25,3 +25,5 @@ function longestConsecutiveLetter(string) {
     }
     return maxLetter + ' : '+ maxCount;
 }
+let string = 'AABCDDBBBEA';
+console.log(longestConsecutiveLetter(string));
