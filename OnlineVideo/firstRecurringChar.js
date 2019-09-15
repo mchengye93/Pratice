@@ -16,7 +16,7 @@ function firstRecurringChar(string) {
             charMap[letter] = 1;
         }
     }
-    return -1;
+    return null;
 }
 
 let string = 'ABCDEGBA'
