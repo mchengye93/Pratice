@@ -6,3 +6,38 @@ Given a root of a Binary Search Tree (BST) and a number num, implement an effici
 
 Analyze the time and space complexities of your solution.
 */
+
+BinarySearchTree.prototype.findLargestSmallerKey = function(num) {
+
+  
+    let root = this.root;
+    
+    
+    return findLargest(root);
+    
+    function findLargest(node) {
+     //current key val is greater than num we go left 
+    
+    if (node.key > num) {
+      //check if left value is less than given num
+      if (node.left === null) {
+        return -1;
+      }
+      
+      return findLargest(node.left);
+      
+      //we go left until we find a number that is 
+    }
+    
+    //left is less than
+    if (node.key < num) {
+      if (node.right === null) {
+        return node.key;
+      }
+      return findLargest(node.right);
+      
+    }
+      
+    }
+  
+  }
