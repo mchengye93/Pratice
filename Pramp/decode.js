@@ -12,20 +12,24 @@ output: 3
 explanation: There are 3 messages that encode to '1262': 'AZB', 'ABFB', and 'LFB'
 
 */
-function decodeVariations(S):
-    N = S.length
-    dp = new Array(N)
-    dp[N] = 1
-    for i from N-1 to 0:
-        if S[i] == '0':
-            dp[i] = 0
-        else if S[i] == '1':
-            dp[i] = dp[i+1] + dp[i+2]
-        else if S[i] == '2':
-            dp[i] = dp[i+1]
-            if i+1 < S.length && S[i+1] <= '6':
-                dp[i] += dp[i+2]
-        else:
-            dp[i] = dp[i+1]
+function decodeVariations(s) {
+    if (s.length === 0 || s[0]==='0') {
+        return 0;
+    }
+    let dp = [1,1];
+    
+    for (let i = 2; i < s.length+1; i++) {
+        let result = 0;
+        let num = parseInt(s.slice(i-2,i));
+        
+        if (num >= 10 && num <= 26) {
+            result = dp[i-2];
+        }
+        if (s[i-1] != '0') {
+            result += dp[i-1];
+        }
+        dp.push(result);
+    }
+    return dp[s.length];
 
-    return dp[0]
+}
