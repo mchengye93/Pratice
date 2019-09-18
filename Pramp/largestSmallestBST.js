@@ -29,7 +29,9 @@ BinarySearchTree.prototype.findLargestSmallerKey = function(num) {
       }
     }
 
-    /* Recursive way
+  }
+
+   /* Recursive way
     let root = this.root;
     
     
@@ -59,5 +61,3 @@ BinarySearchTree.prototype.findLargestSmallerKey = function(num) {
     }
       
     }*/
-  
-  }
