@@ -10,6 +10,26 @@ Analyze the time and space complexities of your solution.
 BinarySearchTree.prototype.findLargestSmallerKey = function(num) {
 
   
+
+    let node = this.root;
+    while(node !== null) {
+      
+      if (node.key > num) {
+        node = node.left;
+        if (node.left === null) {
+          return -1;
+        }
+      }
+      if (node.key < num) {
+        if (node.right!== null) {
+          node = node.right;
+        } else {
+          return node.key;
+        }
+      }
+    }
+
+    /* Recursive way
     let root = this.root;
     
     
@@ -38,6 +58,6 @@ BinarySearchTree.prototype.findLargestSmallerKey = function(num) {
       
     }
       
-    }
+    }*/
   
   }
