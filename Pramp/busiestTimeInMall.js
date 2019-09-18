@@ -53,3 +53,36 @@ function findBusiestPeriod(data) {
     
     return busiestTime;
   }
+
+  /*
+   // your code goes here
+  let busiestTime = 0;
+  let maxNum = 0;
+  let currentPeople = 0;
+  
+  for (let i = 0; i < data.length; i++) {
+    let dataTime = data[i];
+    let time = dataTime[0];
+    let x = 0;
+    while(data[i+x][0] === time && data[i+x]) {
+    
+    let amount = data[i+x][1];
+    let inOut = data[i+x][2];
+      
+      if (inOut) {
+        currentPeople += amount;
+      } else {
+        currentPeople -= amount;
+      }
+      x++;
+    }
+    if (currentPeople > maxNum) {
+      maxNum = currentPeople;
+      busiestTime = time;
+    }
+    i = i + x;
+    x = 0;
+    
+  }
+  return busiestTime;
+  */
