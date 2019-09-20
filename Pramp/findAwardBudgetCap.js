@@ -8,31 +8,31 @@ output: 47 # and given this cap the new grants array would be
            # new grants is indeed 190
 */
 function findGrantsCap(grantsArray, newBudget) {
-    // your code goes here
-    
-    
-    //find average cap for given grants
-    let average = newBudget/grantsArray.length;
-    let totalAvgLess = 0;
-    let totalCountLess = 0;
-    
-    for (let i = 0; i < grantsArray.length; i++) {
-     //then find those that are less than the average
-    //count and add those that are less than average 
-      let budget = grantsArray[i];
-      if (budget < average) {
-        totalAvgLess += budget;
-        totalCountLess++;
-      }
-    
-    }
+ if (grantsArray === null || newBudget <=0) {
+    return 0;
+  }
+    grantsArray.sort((a,b)=> a-b);
+   let prefixSum = 0;
+   console.log(grantsArray);
+   for (let i = 0; i < grantsArray.length; i++) {
+     let current = grantsArray[i];
+     let available = newBudget- prefixSum;
+     let numbersLeft = grantsArray.length-i;
+     
+     
+     //if we exhausted our grants then we return cap
+     if (current * numbersLeft > available) {
+       return available/numbersLeft;
+     }
+     
+     //keep substracting to available until we find grants that exhaust available
+     prefixSum += current;
+     
+   }
    
-    //subtract to to total budget and then divide amongs greater granta
-    let cap = (newBudget-totalAvgLess)/ (grantsArray.length-totalCountLess); 
-    
-    //check if newCap has value less than it
-    
-    return cap;
-    
-    
-  } 
+  
+   return grantsArray[grantsArray.length-1];
+   
+   
+ }
+ 
