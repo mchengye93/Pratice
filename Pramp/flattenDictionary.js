@@ -22,7 +22,6 @@ output: {
             "Key2.c.e" : "1"
         }
 */
-
 function flattenDictionary(dict) {
     let newDict = {};
     
@@ -50,14 +49,25 @@ function flattenDictionary(dict) {
      
        if (typeof(val) === 'object') {
          if (key.length > 0){
-           flattenObject(dict,prevKey+'.'+key,val);
+           if (prevKey.length!== 0) {
+             flattenObject(dict,prevKey+'.'+key,val);
+           } else {
+             flattenObject(dict,key,val);
+           }
+           
          } else {
+           
            flattenObject(dict,prevKey,val);
          }
   
        } else {
          if (key.length > 0) {
-           dict[prevKey+'.'+key] = val;
+           if(prevKey.length!==0){
+             dict[prevKey+'.'+key] = val;
+           } else {
+             dict[key] = val;
+           }
+           
          } else {
            dict[prevKey] = val;
          }
