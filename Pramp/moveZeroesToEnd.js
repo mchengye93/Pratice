@@ -9,25 +9,34 @@ function moveZerosToEnd(arr) {
 	@return: integer[]
 	*/
 
-  let result = [];
+
   let zeroCount = 0;
   
-  //O(n+m) space: O(n)
+  //O(n+n+m) 
+  let idx = 0;
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === 0) {
       zeroCount++;
-    } else {
-      result.push(arr[i]);
+    }
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      arr[idx] = arr[i];
+      idx++;
     }
   }
   
-  
-  for (let i = 0; i < zeroCount; i++ ) {
-    result.push(0);
+  for (let i = arr.length-1; zeroCount !== 0; i--) {
+    arr[i] = 0;
+    zeroCount--;
   }
   
-  return result;
+  
+  
+  
+  
+  return arr;
   
 }
 
