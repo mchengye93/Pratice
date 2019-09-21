@@ -13,7 +13,7 @@ function findGrantsCap(grantsArray, newBudget) {
   }
     grantsArray.sort((a,b)=> a-b);
    let prefixSum = 0;
-   console.log(grantsArray);
+
    for (let i = 0; i < grantsArray.length; i++) {
      let current = grantsArray[i];
      let available = newBudget- prefixSum;
