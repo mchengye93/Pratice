@@ -18,44 +18,47 @@ output: [ 'p', 'r', 'a', 'c', 't', 'i', 'c', 'e', '  ',
           'p', 'e', 'r', 'f', 'e', 'c', 't' ]
 */
 function reverseWords(arr) {
-    /*
-    Input: Array of letters where words are seperate with space
-    Output: Reverse order the words 
+  /*
+  Input: Array of letters where words are seperate with space
+  Output: Reverse order the words 
+  
+  
+  Steps:
+    Reverse the array
+    Then find words start and end and then reverse it
     
-    
-    Steps:
-      Find the words - start index and end index
-      
-    */
+  */
+ reverse(arr,0,arr.length-1);
+ let wordStart = null;
+ for (let i = 0; i < arr.length ; i++) {
+   if (arr[i] === ' ') {
+     if (wordStart !== null) {
+       reverse(arr,wordStart,i-1);
+       wordStart = null;
+     }
+   } else if ( i === arr.length - 1) {
+     if (wordStart !== null) {
+       reverse(arr,wordStart,i);
+     }
+     
+   } else {
+      if (wordStart === null) {
+        wordStart = i;
+      }
+   }
    
-   
-   /*
-   -Reverse arr
-   -Find words reverse the word
-       -Ignore spaces
-    
-   */
-    let start = 0;
-    let end = arr.length-1;
-    while (start != end) {
-      let endLetter = arr[end];
-      let startLetter = arr[start];
-      
-      arr[start] = endLetter;
-      arr[end] = startLetter;
-      start++;
-      end--;
-    }
-    
-    //reverse words 
-    
-  }
-  function reverse(arr,start,end) {
-    while (start < end) {
-      let temp = arr[start];
-      arr[start] = arr[end];
-      arr[end] = temp;
-      start++;
-      end--;
-    }
-  }
+ }
+ return arr;
+
+
+ 
+}
+function reverse(arr,start,end) {
+ while (start < end) {
+   let temp = arr[start];
+   arr[start] = arr[end];
+   arr[end] = temp;
+   start++;
+   end--;
+ }
+}
