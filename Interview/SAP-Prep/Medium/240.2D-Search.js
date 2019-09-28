@@ -31,18 +31,20 @@ var searchMatrix = function(matrix, target) {
         return false;
     }
     
-
     let curRow = 0;
     let curCol = matrix[0].length -1;
 
     while(curRow < matrix.length && curCol >=0 ) {
         let curVal = matrix[curRow][curCol];
+
         if (curVal === target) {
             return true;
         }
+        //Using it's properties if curVal is less than target then we look at bottom row for greater val
         if (curVal < target) {
             curRow++;
         } else {
+            //if current value is greater move a col back
             curCol--;
         }
     }
