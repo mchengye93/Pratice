@@ -26,11 +26,24 @@ Given target = 20, return false.
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
-    for (let r = 0; r < matrix.length; r++) {
-        for (let c = 0; c < matrix[0].length; c++) {
-            if (matrix[r][c] === target) {
-                return true;
-            }
+
+    if(matrix === null || matrix.length == 0) {
+        return false;
+    }
+    
+
+    let curRow = 0;
+    let curCol = matrix[0].length -1;
+
+    while(curRow < matrix.length && curCol >=0 ) {
+        let curVal = matrix[curRow][curCol];
+        if (curVal === target) {
+            return true;
+        }
+        if (curVal < target) {
+            curRow++;
+        } else {
+            curCol--;
         }
     }
     return false;
