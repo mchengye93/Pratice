@@ -19,3 +19,19 @@ Given target = 5, return true.
 
 Given target = 20, return false.
 */
+
+/**
+ * @param {number[][]} matrix
+ * @param {number} target
+ * @return {boolean}
+ */
+var searchMatrix = function(matrix, target) {
+    for (let r = 0; r < matrix.length; r++) {
+        for (let c = 0; c < matrix[0].length; c++) {
+            if (matrix[r][c] === target) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
