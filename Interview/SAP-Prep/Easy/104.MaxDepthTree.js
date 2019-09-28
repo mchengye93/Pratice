@@ -34,6 +34,8 @@ return its depth = 3.
  * @param {TreeNode} root
  * @return {number}
  */
+
+ //Time Complexity: O(N) Space Complexity: O(N)
 var maxDepth = function(root) {
     if (root === null) {
         return 0;
