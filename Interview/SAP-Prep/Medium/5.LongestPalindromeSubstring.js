@@ -17,7 +17,8 @@ Output: "bb"
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    
+    //Time Complexity = O(N^2) We expand around center can take up to O(N) and we do this for each character
+    //Space Complexity= O(1)
     let startIdx = 0;
     let maxLength = 1;
 
