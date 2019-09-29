@@ -17,19 +17,26 @@ Output: "bb"
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    //go through each str
-    let palindromeWord = '';
-    for (let i = 0; i < s.length; i++) {
-        for (let x = i; x < s.length+1; x++) {
-            let word = s.substring(i,x);
-            let reverse = word.split('').reverse().join('');
-            //console.log(word);
-            //console.log(reverse);
-            if (word === reverse && word.length > palindromeWord.length) {
-                palindromeWord = word;
-            }
-        }
     
+    let startIdx = 0;
+    let maxLength = 1;
+
+    function expandAroundMiddle(left,right) {
+        while (left >= 0 && right < s.length && s[left]===s[right]){
+            const currentPalLength = right-left + 1;
+            if (currentPalLength > maxLength) {
+                maxLength = currentPalLength;
+                startIdx = left;
+            }
+            left -= 1;
+            right +=1;
+        }
     }
-    return palindromeWord;
+
+    for (let i = 0; i < s.length; i++) {
+        expandAroundMiddle(i-1, i+1);
+        expandAroundMiddle(i, i+1);
+    }
+
+    return s.slice(startIdx, startIdx+ maxLength);
 };
