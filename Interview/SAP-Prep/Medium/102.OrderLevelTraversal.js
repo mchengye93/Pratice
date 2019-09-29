@@ -82,3 +82,5 @@ var countLevels = (node) => {
     
     return Math.max(left,right);
 }
+
+//Use queue to add all values
