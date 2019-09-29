@@ -37,5 +37,26 @@ var inorderTraversal = function(root) {
     inorder(root);
     return result;
    
+};
 
+var inorderTraversal = function(root) {
+    if(root === null) return [];
+    let stack = [];
+    let res = [];
+    while(true) {
+        
+        //push root and look at root's left most first
+        if (root!== null) {
+            stack.push(root);
+            root = root.left;
+        } else {
+            //if root is null we have reach leftmost val so now we check right's leftmost
+            if (!stack.length) break;
+            root = stack.pop();
+            res.push(root.val);
+            root = root.right;
+        }
+    }
+    return res;
+  
 };
