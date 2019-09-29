@@ -18,6 +18,8 @@ to get new method signature.
  * @param {number[][]} intervals
  * @return {number[][]}
  */
+
+ //Time Complexity: O(NlogN) used sort, Space complexity: O(1) We sort inplace no extra data structure
 var merge = function(intervals) {
     if(!intervals.length) return intervals;
     
