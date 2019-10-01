@@ -12,3 +12,10 @@ For example, given n = 3, a solution set is:
   "()()()"
 ]
 */
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+var generateParenthesis = function(n) {
+    
+};
