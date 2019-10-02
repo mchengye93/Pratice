@@ -19,4 +19,28 @@ Input Explanation: The intersected node's value is 2 (note that this must not be
     of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There 
     are 1 node before the intersected node in B.
 
+ Notes:
+
+If the two linked lists have no intersection at all, return null.
+The linked lists must retain their original structure after the function returns.
+You may assume there are no cycles anywhere in the entire linked structure.
+Your code should preferably run in O(n) time and use only O(1) memory.
+
 */
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+    
+};
