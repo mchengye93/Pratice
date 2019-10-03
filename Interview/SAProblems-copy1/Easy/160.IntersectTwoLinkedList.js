@@ -42,5 +42,46 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  * @return {ListNode}
  */
 var getIntersectionNode = function(headA, headB) {
-    
+   /*
+   1.Calculate length of both linkedList
+   2. Caculate difference d= |l1-l2|
+   3. Move d nodes in longest linkedList
+   4.Then move one by one step in both L1 and L2 until p=q;
+   */
+
+   let l1 = 0;
+   let l2 = 0;
+   let head = headA;
+   while(head !==null) {
+       l1++;
+       head = head.next;
+   }
+   head = headB;
+   while(head !== null) {
+       l2++;
+       head = head.next;
+   }
+   let d = Math.abs(l2-l1);
+
+   let bHead = headB;
+   let aHead = headA;
+   if (l2 > l1) {
+       for (let i = 0; i < d; i++) {
+        bHead = bHead.next;
+       }
+   }
+   if (l1 > l2) {
+    for (let i = 0; i < d; i++) {
+        aHead = aHead.next;
+       }
+   }
+   while(aHead !== null && bHead!== null) {
+       if (aHead === bHead) {
+           return aHead;
+       }
+       aHead = aHead.next;
+       bHead= bHead.next;
+   }
+   return null;
+
 };
