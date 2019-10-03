@@ -41,14 +41,12 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  * @param {ListNode} headB
  * @return {ListNode}
  */
-var getIntersectionNode = function(headA, headB) {
-   /*
-   1.Calculate length of both linkedList
-   2. Caculate difference d= |l1-l2|
-   3. Move d nodes in longest linkedList
-   4.Then move one by one step in both L1 and L2 until p=q;
-   */
 
+ //Runtime: O(N) Space: O(1)
+var getIntersectionNode = function(headA, headB) {
+
+   // 1.Calculate length of both linkedList
+  
    let l1 = 0;
    let l2 = 0;
    let head = headA;
@@ -61,10 +59,14 @@ var getIntersectionNode = function(headA, headB) {
        l2++;
        head = head.next;
    }
+
+   // //2. Caculate difference d= |l1-l2|
    let d = Math.abs(l2-l1);
 
+   //3. Move d nodes in longest linkedList
    let bHead = headB;
    let aHead = headA;
+
    if (l2 > l1) {
        for (let i = 0; i < d; i++) {
         bHead = bHead.next;
@@ -75,6 +77,8 @@ var getIntersectionNode = function(headA, headB) {
         aHead = aHead.next;
        }
    }
+
+   //4.Then move one by one step in both L1 and L2 until p=q;
    while(aHead !== null && bHead!== null) {
        if (aHead === bHead) {
            return aHead;
