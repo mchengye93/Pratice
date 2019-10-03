@@ -20,3 +20,10 @@ Explanation: The answer is "wke", with the length of 3.
               not a substring.
 
 */
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+ 
+};
