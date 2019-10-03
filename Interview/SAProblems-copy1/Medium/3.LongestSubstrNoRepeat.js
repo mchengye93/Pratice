@@ -28,28 +28,20 @@ var lengthOfLongestSubstring = function(s) {
     if (s === null || s.length === 0) return 0;
     let letters = {};
     let maxLength = 0;
-    let currLength = 0;
+   
     let start = 0;
+    let right = 0;
 
-    for (let i = 0; i < s.length; i++) {
-        let letter = s[i];
+    while(right < s.length) {
+
+        let letter = s[right];
         if(letters[letter] === undefined) {
-            letters[letter] = i;
-            currLength++;
+            letters[letter] = right;
+            right++;
+            maxLength = Math.max(maxLength, right-left);
         } else {
-            if(letters[letter]) {
-                start = letters[letter] + 1;
-                
-                if (start === i) currLength = 1;
-                
-                letters[letter] = i;
-                if(i > start) {
-                    currLength++;
-                }
-            }
-        }
-        if(currLength > maxLength) {
-            maxLength = currLength;
+            delete letters[letter];
+            left++;
         }
     }
 
