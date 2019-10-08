@@ -25,6 +25,7 @@ Given target = 20, return false.
  * @param {number} target
  * @return {boolean}
  */
+//Time Complexity: O(M+N) Space: O(1)
 var searchMatrix = function(matrix, target) {
   //set val to be true
   //top right down to bottom left
