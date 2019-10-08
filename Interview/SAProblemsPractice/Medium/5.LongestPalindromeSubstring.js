@@ -17,22 +17,23 @@ Output: "bb"
  * @return {string}
  */
 
+ //Time Complexity: O(N^2) Space Complexity: O(1)
 var longestPalindrome = function(s) {
     let maxLength = 1;
     let startIdx = 0;
     
-    
+
 function expandFromCenter (left,right) {
 
     while(right < s.length && left >=0 && s[left] === s[right]) {
       
-        const currentPalLength = right-left + 1;
-           if (currentPalLength > maxLength) {
-               maxLength = currentPalLength;
-               startIdx = left;
-           }
-        right++;
-        left--;
+    const currentPalLength = right-left + 1;
+        if (currentPalLength > maxLength) {
+            maxLength = currentPalLength;
+            startIdx = left;
+    }
+    right++;
+    left--;
     }
  
 }
