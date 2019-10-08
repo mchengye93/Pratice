@@ -16,6 +16,7 @@ Output: "bb"
  * @param {string} s
  * @return {string}
  */
+
 var longestPalindrome = function(s) {
     let maxLength = 0;
     let start = 0;
