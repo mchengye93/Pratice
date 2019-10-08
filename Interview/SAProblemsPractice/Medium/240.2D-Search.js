@@ -26,6 +26,22 @@ Given target = 20, return false.
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
+  //set val to be true
+  //top right down to bottom left
+  if(matrix === null || matrix.length === 0) return false;
+  let row = 0;
+  let col = matrix[0].length-1;
 
+  while(row < matrix.length && col >=0) {
+    if(matrix[row][col] === target) return true;
+
+    if(matrix[row][col] > target) {
+      col--;
+    } else {
+      row++;
+    }
+    
+  }
+  return false;
 
 };
