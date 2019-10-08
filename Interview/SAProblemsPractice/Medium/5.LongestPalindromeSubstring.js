@@ -18,31 +18,29 @@ Output: "bb"
  */
 
 var longestPalindrome = function(s) {
-    let maxLength = 0;
-    let start = 0;
-    for (let i = 0; i <  s.length; i++) {
-        let len1 = expandFromCenter(s,i-1,i+1);
-        let len2 = expandFromCenter(s,i,i+1);
-        if(len1 > maxLength || len2 > maxLength) start = i;
-        maxLength = Math.max(len1, len2);
+    let maxLength = 1;
+    let startIdx = 0;
+    
+    
+function expandFromCenter (left,right) {
 
+    while(right < s.length && left >=0 && s[left] === s[right]) {
+      
+        const currentPalLength = right-left + 1;
+           if (currentPalLength > maxLength) {
+               maxLength = currentPalLength;
+               startIdx = left;
+           }
+        right++;
+        left--;
     }
-    return s.slice(start,maxLength);
+ 
+}
+      for (let i = 0; i < s.length; i++) {
+       expandFromCenter(i-1, i+1);
+       expandFromCenter(i, i+1);
+   }
+
+    return s.slice(startIdx,startIdx+maxLength);
  
 };
-
-//function to expand from center and see if palindrome and then return length
-
-var expandFromCenter = function(s,left,right) {
-    let length = 0;
-    while(right < s.length && left >=0) {
-        if (s[left] === s[right]) {
-            length = right - left;
-            right++;
-            left--;
-        } else {
-            break;
-        }
-    }
-    return length;
-}
