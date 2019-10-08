@@ -21,29 +21,31 @@ to get new method signature.
 
  //Time Complexity: O(NlogN) used sort, Space complexity: O(1) We sort inplace no extra data structure
 var merge = function(intervals) {
-    if(intervals === null || intervals.length === 0) return [];
+
     //Sort intervals 
     //look at current interval and see if intersect with next 
     //update min and max if intersect
     //take next interval and look at that and repeat
+    if(intervals === null || intervals.length === 0) return [];
     intervals.sort((a,b) => a[0] -b[0]);
-
-    let res = [intervals[0]];
-    let x = 0;
-    for (let i = 1; i < intervals.length; i++) {
-        let currInterval = res[x];
-        let nextInterval = intervals[i];
-
-        if (nextInterval[0] <= currInterval[1]) {
-            res[0] = Math.min(currInterval[0],nextInterval[0]);
-            res[1] = Math.max(currInterval[1],nextInterval[1]);
-        } else {
-            res.push(intervals[i]);
-            x++;
-        }
-    }
-    return res;
-
+  
+      let res = [intervals[0]];
+     
+      let x = 0;
+      for (let i = 1; i < intervals.length; i++) {
+          let currInterval = res[x];
+          let nextInterval = intervals[i];
+  
+          if (nextInterval[0] <= currInterval[1]) {
+              res[x][0] = Math.min(currInterval[0],nextInterval[0]);
+              res[x][1] = Math.max(currInterval[1],nextInterval[1]);
+          } else {
+              res.push(intervals[i]);
+              x++;
+          }
+      }
+      return res;
+      }
  
 }
 
