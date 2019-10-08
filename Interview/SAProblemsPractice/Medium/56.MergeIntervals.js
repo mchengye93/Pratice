@@ -23,7 +23,6 @@ to get new method signature.
 var merge = function(intervals) {
 
     //Sort intervals 
-
     //look at current interval and see if intersect with next 
     //update min and max if intersect
     //take next interval and look at that and repeat
