@@ -21,7 +21,7 @@ to get new method signature.
 
  //Time Complexity: O(NlogN) used sort, Space complexity: O(1) We sort inplace no extra data structure
 var merge = function(intervals) {
-
+    if(intervals === null || intervals.length === 0) return [];
     //Sort intervals 
     //look at current interval and see if intersect with next 
     //update min and max if intersect
