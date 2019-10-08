@@ -24,25 +24,25 @@ Explanation: The answer is "wke", with the length of 3.
  * @param {string} s
  * @return {number}
  */
+
+ //Time Complexity: O(N) Space Complexity: O(N)
 var lengthOfLongestSubstring = function(s) {
     //check for null and length of string
     if(s === null || s.length === 0) return 0;
-
-    
 
     let maxLength = 0;
     let charPost = {};
     let start = 0;
 
     for (let i = 0; i < s.length; i++) {
-        let letter = s[i];
+        let letter = s[i]; 
         
-        if(charPost[letter] !== undefined) {
+        if(charPost[letter] >= start) {
             start = charPost[letter] + 1;
         }
-        let length = i - start + 1;
-        maxLength = Math.max(length, maxLength);
-        charPost[letter]= i;
+        let length = i - start + 1;  
+        maxLength = Math.max(length, maxLength); 
+        charPost[letter]= i; 
     }
     return maxLength;
  
