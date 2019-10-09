@@ -24,6 +24,23 @@ Explanation: The answer is "wke", with the length of 3.
  * @param {string} s
  * @return {number}
  */
+
 var lengthOfLongestSubstring = function(s) {
+ //Use like a window method where slide there window as we find character
+ //Store index of last character
+ //store a max length windown and update when we find bigger window
  
+ let start = 0;
+ let maxLength = 0;
+
+ 
+ let letterIdx = {};
+for (let i = 0; i < s.length; i++) {
+    
+    if (letterIdx[s[i]] >= start) start  = letterIdx[s[i]] + 1;
+    if (i-start + 1 > maxLength) maxLength = i - start + 1;
+    letterIdx[s[i]] = i;
+}
+return maxLength;
+
 };
