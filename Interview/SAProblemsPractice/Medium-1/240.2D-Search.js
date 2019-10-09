@@ -25,7 +25,21 @@ Given target = 20, return false.
  * @param {number} target
  * @return {boolean}
  */
-var searchMatrix = function(matrix, target) {
 
+ //Runtime: O(N+M) Space: O(1)
+var searchMatrix = function(matrix, target) {
+  //search using stair case model
+  let row = 0;
+  let col = matrix[0].length - 1;
+
+  while(row < matrix.length && col >= 0) {
+    if (matrix[row][col] === target) return true;
+    if (matrix[row][col] > target) {
+      col--;
+    } else {
+      row++;
+    }
+  }
+  return false;
 
 };
