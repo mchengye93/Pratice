@@ -25,6 +25,7 @@ Explanation: The answer is "wke", with the length of 3.
  * @return {number}
  */
 
+ //Runtime: O(n) Space: O(n)
 var lengthOfLongestSubstring = function(s) {
  //Use like a window method where slide there window as we find character
  //Store index of last character
