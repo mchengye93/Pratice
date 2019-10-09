@@ -28,6 +28,7 @@ Given target = 20, return false.
 
  //Runtime: O(N+M) Space: O(1)
 var searchMatrix = function(matrix, target) {
+  if (matrix === null || matrix.length === 0) return false;
   //search using stair case model
   let row = 0;
   let col = matrix[0].length - 1;
