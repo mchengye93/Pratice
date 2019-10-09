@@ -16,6 +16,8 @@ Output: "bb"
  * @param {string} s
  * @return {string}
  */
+
+ //Runtime O(N^2) Space: O(1)
 var longestPalindrome = function(s) {
     let startIdx = 0;
     let maxLength = 1;
