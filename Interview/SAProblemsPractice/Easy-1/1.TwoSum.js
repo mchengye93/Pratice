@@ -17,6 +17,8 @@ return [0, 1].
  * @param {number} target
  * @return {number[]}
  */
+
+ //Runtime: O(n) Space: O(n)
 var twoSum = function(nums, target) {
     let numPos = {};
     
