@@ -50,3 +50,31 @@ var isSymmetric = function(root) {
 
    
 };
+
+//Iterative solutuon to isSymettric
+var isSymmetric = function(root) {
+   if (root === null) return true;
+   
+   let queue = [];
+   queue.push(root.left);
+   queue.push(root.right);
+   
+   while(queue.length!== 0) {
+       let left = queue.shift();
+       let right= queue.shift();
+       
+       if(left === null && right === null) continue;
+       if(left === null || right === null) return false;
+       if(left.val !== right.val) return false;
+       
+       queue.push(right.left);
+       queue.push(left.right);
+       queue.push(left.left);
+       queue.push(right.right);
+       
+   }
+   return true;
+   
+
+   
+};
