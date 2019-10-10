@@ -33,7 +33,7 @@ cache.get(4);       // returns 4
 var LRUCache = function(capacity) {
     this.capacity = capacity;
 
-    //map preserve it's order unlike object
+    //map preserve it's order unlike object 0->1->last put in
     this.map = new Map();
 };
 
@@ -57,7 +57,7 @@ LRUCache.prototype.get = function(key) {
 LRUCache.prototype.put = function(key, value) {
     if(this.map.has(key)) { this.map.delete(key)}
     this.map.set(key,value);
-    let keys = this.map.keys();
+    let keys = this.map.keys(); //this.map.keys() return iterator
     while(this.map.size > this.capacity) { this.map.delete(keys.next().value)};
 };
 
