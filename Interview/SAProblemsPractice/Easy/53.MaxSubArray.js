@@ -17,6 +17,8 @@ the divide and conquer approach, which is more subtle.
  * @param {number[]} nums
  * @return {number}
  */
+
+ //Runtime: O(n) Space: O(1)
 var maxSubArray = function(nums) {
     let max = nums[0];
     let currentMax = nums[0];
