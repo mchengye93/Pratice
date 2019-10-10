@@ -35,5 +35,18 @@ Bonus points if you could solve it both recursively and iteratively.
  * @return {boolean}
  */
 var isSymmetric = function(root) {
+  
+      if (root === null) return true;
+      
+      function symmetric(left,right) {
+          if(left === null && right ===null) return true;
+          if(left === null || right === null) return false;
+          
+          if (left.val !== right.val) return false;
+          return symmetric(left.right, right.left) && symmetric(left.left,right.right);
+      }
+      return symmetric(root.left, root.right);
+      
+
    
 };
