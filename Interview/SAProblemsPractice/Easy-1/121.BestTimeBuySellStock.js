@@ -23,7 +23,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
  * @return {number}
  */
 
-
+//Runtime: O(n) Space: O(1)
 var maxProfit = function(prices) {
      let maxProfit = 0;
     let minPrice = prices[0];
