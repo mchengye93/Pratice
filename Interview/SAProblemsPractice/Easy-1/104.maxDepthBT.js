@@ -30,6 +30,10 @@ return its depth = 3.
  */
 //
 var maxDepth = function(root) {
-  
     
+  function depth(root) {
+      if (root === null) return 0;
+      return Math.max(depth(root.left)+ 1, depth(root.right)+1);
+  }
+  return depth(root);
 };
