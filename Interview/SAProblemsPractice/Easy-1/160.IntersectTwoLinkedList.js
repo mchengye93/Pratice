@@ -49,6 +49,8 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  * @param {ListNode} headB
  * @return {ListNode}
  */
+
+ //Runtime: O(N) Space: O(1)
 var getIntersectionNode = function(headA, headB) {
     
     //get longest list
