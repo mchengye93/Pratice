@@ -37,10 +37,60 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  */
 
 /**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
  * @param {ListNode} headA
  * @param {ListNode} headB
  * @return {ListNode}
  */
 var getIntersectionNode = function(headA, headB) {
+    
+    //get longest list
+    let aCount = 0;
+    let bCount = 0;
+    
+    let aHead = headA;
+    let bHead = headB;
+    while (aHead!==null) {
+        aHead = aHead.next;
+        aCount++;
+    }
+    
+    while (bHead!==null) {
+        bHead = bHead.next;
+        bCount++;
+    }
+    aHead = headA;
+    bHead= headB;
+    
+    if( aCount > bCount) {
+        let diff = aCount-bCount;
+   
+        while(diff) {
+            aHead = aHead.next;
+            diff--;
+        }
+            
+    } else {
+        let diff = bCount-aCount;
+     
+        while(diff) {
+            bHead = bHead.next;
+            diff--;
+        }
+        
+    }
+      while(aHead !== null && bHead !==null){
+            if(aHead === bHead) return aHead;
+            aHead = aHead.next;
+            bHead = bHead.next;
+        }
+    
     
 };
