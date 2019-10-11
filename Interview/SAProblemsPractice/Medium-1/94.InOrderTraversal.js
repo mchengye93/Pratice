@@ -26,6 +26,23 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
  */
 
 var inorderTraversal = function(root) {
-
-  
+   let res = [];
+   let stack = [];
+   
+   while(true) {
+       //keep on going left from current node if hit null then take last node
+       if (root !==null){
+           stack.push(root);
+           root = root.left;
+       } else {
+           //from last node push val and now look at node's right and repeat leftmost
+           if(!stack.length)break;
+           root = stack.pop();
+           res.push(root.val);
+           root = root.right;
+           
+       }
+   } 
+   return res;
 };
+
