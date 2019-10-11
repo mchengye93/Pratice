@@ -31,7 +31,8 @@ cache.get(4);       // returns 4
  * @param {number} capacity
  */
 var LRUCache = function(capacity) {
-    
+    this.capacity = capacity;
+    this.map = new Map();
 };
 
 /** 
@@ -40,6 +41,10 @@ var LRUCache = function(capacity) {
  */
 LRUCache.prototype.get = function(key) {
     
+    if(this.map.get(key)) let val = this.map.get(key);
+    this.map.delete(key);
+    this.map.set(key,val);
+    return val;
 };
 
 /** 
