@@ -60,8 +60,6 @@ LRUCache.prototype.put = function(key, value) {
     while(this.map.size > this.capacity) this.map.delete(keys.next().value);
 };
 
-
-
 /** 
  * Your LRUCache object will be instantiated and called as such:
  * var obj = new LRUCache(capacity)
