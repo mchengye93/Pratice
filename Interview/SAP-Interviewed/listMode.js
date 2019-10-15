@@ -22,3 +22,29 @@ let maxCount = function(arr) {
     }
     return maxInt;
 }
+
+//Runtime: O(nlogn) Space:O(1)
+let maxCount = function(arr) {
+    if(arr.length === 0 || arr === null) return -1;
+    arr.sort((a,b) => a-b);
+    let maxCount = 1;
+    let maxInt = arr[0];
+
+    let currentInt = arr[0];
+    let currentCount = 1;
+    for (let i = 1; i < arr.length; i++) {
+        if (currentInt !== arr[i]) {
+            currentCount = 1;
+            currentInt = arr[i];
+        } else {
+            currentCount++;
+            if(currentCount > maxCount) {
+                maxCount = currentCount;
+                maxInt = arr[i];
+            }
+        }
+    }
+    return maxInt;
+
+}
+
