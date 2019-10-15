@@ -2,6 +2,7 @@
 Given a list of integers return maxCount
 */
 
+//Runtime: O(n) Space: O(n)
 let maxCount = function(arr) {
     if (arr.length === 0 || arr === null) return -1;
     let hashMap = {};
