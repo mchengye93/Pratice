@@ -52,6 +52,6 @@ let missingNum = (arr) => {
 }
 
 
-let arr = [1,2,3,4,5,6];
-console.log(missingNum(arr)); //7
+let arr = [1,3,4,5];
+console.log(missingNum(arr)); //2
 
