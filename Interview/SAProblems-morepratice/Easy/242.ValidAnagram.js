@@ -22,5 +22,26 @@ solution to such case?
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    
+    if (s.length !== t.length) return false;
+    let sCharCount = {};
+
+    for (let i = 0; i < s.length; i++) {
+        if (sCharCount[s[i]] === undefined) {
+            sCharCount[s[i]] = 1;
+
+        } else {
+            sCharCount[s[i]]++;
+        }
+    }
+
+    for (let i = 0; i < t.length; i++) {
+        if(sCharCount[t[i]] === undefined) {
+            return false;
+        } else {
+            sCharCount[t[i]]--;
+            if (sCharCount[t[i]] < 0) return false;
+        }
+    }
+
+    return true;
 };
