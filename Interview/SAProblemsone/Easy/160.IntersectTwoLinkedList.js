@@ -79,7 +79,7 @@ var getIntersectionNode = function(headA, headB) {
         nodeB = nodeB.next;
     }
 
-    return -1;
+    return null;
 
 
     
