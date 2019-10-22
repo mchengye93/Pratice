@@ -29,6 +29,25 @@ return its level order traversal as:
  * @return {number[][]}
  */
 var levelOrder = function(root) {
+  if (root ===null) return [];
+  let res = [];
+  let stack = [root];
+
+  while(stack.length > 0) {
+    let temp = [];
+    let size = stack.length;
+
+    for (let i = 0; i < size; i++) {
+      let node = stack.shift();
+      temp.push(node.val);
+
+      if (node.left !== null) stack.push(node.left)
+      if (node.right !==null) stack.push(node.right);
+    }
+    res.push(temp);
+  }
+  return res;
+
 
 };
 
