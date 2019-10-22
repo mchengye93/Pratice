@@ -41,7 +41,11 @@ var LRUCache = function(capacity) {
  * @return {number}
  */
 LRUCache.prototype.get = function(key) {
-    
+    let val = this.map.get(key);
+    if (!val) return -1; 
+    this.map.delete(key);
+    this.map.set(key,val);
+    return val;
 };
 
 /** 
@@ -50,7 +54,12 @@ LRUCache.prototype.get = function(key) {
  * @return {void}
  */
 LRUCache.prototype.put = function(key, value) {
-    
+    this.map.delete(key);
+    this.map.set(key,value);
+
+    let keys = this.map.keys();
+
+    while(this.map.size > this.map.capacity) this.map.delete(keys.next().value);
 };
 
 /** 
