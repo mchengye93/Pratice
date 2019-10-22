@@ -25,5 +25,18 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 
 var maxProfit = function(prices) {
- 
+     let maxProfit = 0;
+     let minPrices = prices[0];
+
+     for (let i = 0; i < prices.length; i++) {
+          if (prices[i] < minPrices) {
+               minPrices = prices[i];
+          } else {
+               let profit = prices[i] - minPrices;
+               if (profit > maxProfit) maxProfit = profit;
+          }
+     }
+     return maxProfit;
+
+
 };
