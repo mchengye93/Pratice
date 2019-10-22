@@ -26,6 +26,17 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
  */
 
 var inorderTraversal = function(root) {
+   let result = [];
 
+   let inOrder = (root) => {
+      if (root === null) return;
+      inOrder(root.left);
+      result.push(root.val);
+      inOrder(root.right);
+   }
+   inOrder(root);
+
+   return result;
+    
   
 };
