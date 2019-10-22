@@ -42,5 +42,45 @@ Your code should preferably run in O(n) time and use only O(1) memory.
  * @return {ListNode}
  */
 var getIntersectionNode = function(headA, headB) {
+    let aSize = 0;
+    let bSize = 0;
+
+    let node = headA;
+
+    while(node !== null) {
+        aSize++;
+        node = node.next;
+    }
+
+    node = headB;
+
+    while(node !== null) {
+        bSize++;
+        node = node.next;
+    }
+    let diff = Math.abs(aSize - bSize);
+    let nodeA = headA;
+    let nodeB = headB;
+
+    if(aSize > bSize) {
+        for(let i = 0; i < diff; i++) {
+            nodeA = nodeA.next;  
+        }
+        
+    } else {
+        for(let i = 0; i < diff; i++) {
+            nodeB= nodeB.next;  
+        }
+    }
+
+    while(nodeA !== null && nodeB !== null) {
+        if (nodeA === nodeB) return nodeA;
+        nodeA = nodeA.next;
+        nodeB = nodeB.next;
+    }
+
+    return -1;
+
+
     
 };
