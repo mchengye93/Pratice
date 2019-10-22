@@ -17,5 +17,28 @@ Output: "bb"
  * @return {string}
  */
 var longestPalindrome = function(s) {
+    let maxLength = 0;
+    let startIdx = 0;
 
+    let expandCenter = (left,right) => {
+        
+        while( s[left] === s[right] && left >=0 && right < s.length) {
+           
+            let length = right-left+1;
+
+            if (length > maxLength) {
+                maxLength = length;
+                startIdx = left;
+            }
+            left--;
+            right++;
+        }
+        
+    }
+    for (let i = 0 ; i < s.length; i++ ) {
+        expandCenter(i,i+1);
+        expandCenter(i-1,i+1);
+    }
+    return s.slice(startIdx, startIdx+maxLength);
 };
+
