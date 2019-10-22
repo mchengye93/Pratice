@@ -6,6 +6,11 @@ Given two sorted arrays arr1 and arr2 of passport numbers, implement a function 
 Let N and M be the lengths of arr1 and arr2, respectively. Solve for two cases and analyze the
  time & space complexities of your solutions: M ≈ N - the array lengths are approximately the
   same M ≫ N - arr2 is much bigger than arr1.
+
+Example:
+input:  arr1 = [1, 2, 3, 5, 6, 7], arr2 = [3, 6, 7, 8, 20]
+
+output: [3, 6, 7] # since only these three values are both in arr1 and arr2s
 */
 function findDuplicates(arr1, arr2) {
   

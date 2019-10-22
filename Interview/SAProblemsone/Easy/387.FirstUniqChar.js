@@ -16,5 +16,20 @@ Note: You may assume the string contain only lowercase letters.
  * @return {number}
  */
 var firstUniqChar = function(s) {
+
+    let charCount = {};
+
+    for (let i = 0; i < s.length; i++) {
+        if (charCount[s[i]] === undefined) {
+            charCount[s[i]] = 1;
+        } else {
+            charCount[s[i]]++;
+        }
+    }
+
+    for (let i = 0; i < s.length; i++) {
+        if (charCount[s[i]] === 1) return i;
+    }
+    return -1;
     
 };

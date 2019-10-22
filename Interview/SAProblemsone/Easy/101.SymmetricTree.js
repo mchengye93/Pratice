@@ -35,5 +35,15 @@ Bonus points if you could solve it both recursively and iteratively.
  * @return {boolean}
  */
 var isSymmetric = function(root) {
+
+  return isMirror(root,root);
+
    
 };
+
+let isMirror = (tree1, tree2) => {
+   if (tree1 === null && tree2 === null) return true;
+   if (tree1 === null || tree2 === null) return false;
+
+   return tree1.val === tree2.val && isMirror(tree1.left, tree2.right) && isMirror(tree1.right,tree2.left);
+}
