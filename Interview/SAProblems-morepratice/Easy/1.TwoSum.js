@@ -18,6 +18,14 @@ return [0, 1].
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-  
+    let numPos = {};
+
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+
+        if (numPos[complement] !== undefined) return [numPos[complement], i];
+
+        numPos[nums[i]] = i;
+    }
        
 };
