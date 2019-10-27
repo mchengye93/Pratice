@@ -30,8 +30,21 @@ cache.get(4);       // returns 4
 /**
  * @param {number} capacity
  */
+class Node {
+    constructor(key, val, left = null, right =null) {
+        this.key = key;
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
 var LRUCache = function(capacity) {
-    
+    this.capacity = capacity;
+    this.size = 0;
+    this.head = null;
+    this.tail = null;
+    this.map = {};
+
 };
 
 /** 
@@ -39,7 +52,27 @@ var LRUCache = function(capacity) {
  * @return {number}
  */
 LRUCache.prototype.get = function(key) {
-    
+    let node = this.map[key];
+    if (node) {
+        //update head
+        this.add(key,node.val);
+
+    } else {
+        return -1;
+    }
+};
+
+LRUCache.prototype.add = function(key,val) {
+    let node = new Node(key,val);
+    if (this.head === null) {
+        this.head = node;
+        this.tail = node;
+        
+    } else {
+        let prevHead = this.head;
+        this.head = 
+    }
+    this.size++;
 };
 
 /** 
