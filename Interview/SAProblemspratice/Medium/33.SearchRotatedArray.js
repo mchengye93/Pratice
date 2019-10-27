@@ -21,7 +21,10 @@ Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
 */
 
-function search(nums, target) {    
+function search(nums, target) {  
+    let pivotIdx = pivot(nums);
+    
+    return Math.max(binarySearch(nums,target,0, pivotIdx-1), binarySearch(nums,target,pivot,nums.length-1));
 
 }
 
