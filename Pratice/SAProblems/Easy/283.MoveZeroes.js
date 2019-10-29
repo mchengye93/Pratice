@@ -11,3 +11,19 @@ Note:
 You must do this in-place without making a copy of the array.
 Minimize the total number of operations.
 */
+let zeroes = (arr) => {
+    let zeroCount = 0;
+    let x = 0;
+    for (let i = 0; i <  arr.length; i++) {
+        if (arr[i] === 0) {
+            zeroCount++;
+        } else {
+            arr[x] = arr[i];
+            x++;
+        }
+    }
+
+    for (let i = x; i < arr.length;i++) {
+        arr[i] = 0;
+    }
+}
