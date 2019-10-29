@@ -27,7 +27,7 @@ class Cache {
             this.head = this.tail = new Node(key, value);
         } else{
             //else set node to be head 
-            const node = new Node(key, value, this.head);
+            const node = new Node(key, value);
 
             //oldHead's prev is node
             this.head.prev = node;
@@ -67,14 +67,14 @@ class Cache {
         //if node prev is not null reset prev next to point node next
         if(node.prev !== null){
           node.prev.next = node.next;
-        }else{
+        } else {
           this.head = node.next;
         }
         
         //if node next is not null set node.next.prev to point node.prev
         if(node.next !== null){
           node.next.prev = node.prev;
-        }else{
+        } else {
             //if next is null then it was tail so set new tail to be current's prev
           this.tail = node.prev
         }
