@@ -18,5 +18,13 @@ the divide and conquer approach, which is more subtle.
  * @return {number}
  */
 var maxSubArray = function(nums) {
-    
+    let maxSum = nums[0];
+    let currentMaxSum = nums[0];
+
+    for (let i = 1 ; i < nums[i]; i++) {
+        currentMaxSum = Math.max(currentMaxSum+nums[i], nums[i]);
+        maxSum = Math.max(maxSum,currentMaxSum);
+    }
+
+    return maxSum;
 };
