@@ -1,0 +1,9 @@
+Questions
+- Is it one level parking or multiple?
+- Are we considering different types of car for parking? S,M,L,XL
+- It is only one entrance or multiple?
+- Are we considering different price for parking space?
+- Can a smaller car take up bigger car spot spaces?
+- Are we considering a fair price?
+- Do we care about the order car is parked? Filling inside first then outside?
+
