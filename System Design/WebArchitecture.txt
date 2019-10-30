@@ -1,0 +1,22 @@
+Backend 
+- any application connected to internet/cloud and it's job is to service request
+- Back processes: Web servers and databases
+    - Web server
+        - Anything that can responds to an HTTP request with some data 
+            and can return a file
+    - Databases
+        - Persist data
+        - You can use databases independently from web servers
+    - working together
+        - usually on seperate computer
+        - they try to perform highest ability so it is best they are seperate
+        - seperate so they do not compete for computer resource
+        - connect with each other (sockets)
+        - dbs support many connections
+    
+-Front-end : Any code that runs on a client
+-Interact with front and these make request to server and server/db interact to return data
+-Old model
+- All html is done in backend and render infront end
+-'New mode'- backend generate data and front end just do html update
+

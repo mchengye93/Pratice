@@ -1,0 +1,32 @@
+1. Approach and Stucture
+    1. Gathering requirements
+        - Clarifying questions
+    2. High level diagrams
+        - Draw a couple of rectangles (main components architeture)
+        - Full stack App
+            - User 
+            - Load balance layer
+            - Application server layer
+                -Micro services / Other services
+            - Caching layer
+            - Database - storage layer
+        - What consideration for each ?
+            - Choosing type of database: SQL or NoSQL
+            -
+    3. Critical parts
+        - Maybe draw database schema for important part of like user schema
+        - Defined API between to components
+            - Defined REST API between two components look like
+        
+    4. Details - diving deep into specific part
+        - Make sure to engage with interviewers to find out what he wants
+        - Certain properties
+        - If going well there will be one or two topic you will talk about
+            - Tell me what components I should talk in more depth
+            - Optimization/ edge cases
+            - Example: edge case for youtube: user with tons of followers
+            - How to improve performance
+                - Adding caching layer to speed up read
+                - Making system more reliable replication/ single point failure
+    
+        
