@@ -1,3 +1,6 @@
+
+Problem Statement : Design a Parking Lot
+
 Questions
 - Is it one level parking or multiple?
 - Are we considering different types of car for parking? S,M,L,XL
@@ -7,3 +10,55 @@ Questions
 - Are we considering a fair price?
 - Do we care about the order car is parked? Filling inside first then outside?
 
+1. Handling Ambiguity
+- Ask question: System Design? Algorithm?
+
+2. Systematic Approach
+- Ask questions 
+    - How is it designed?
+        -Open space, closed, buildings
+    - Accessibility?
+    - How many spots?
+    - How big are spots?
+    - Prices?
+    
+- Clarify assumptions
+    - 4 sizes of car (S,M,L,XL)
+    - smaller car can be put in bigger spots
+
+abstract Vehicle
+    - String licensePlate
+    - enum color
+
+4 classes of vehicles that inherits vehicle
+class motorcycle (S),  class car(M), truck (L), bus (XL)
+
+class ParkingLot (zipCode:Int)
+    - placeVehicle(vehicle: Vehicle) : return free spot
+        - check all spots that is off the size
+        - Linear approach using an array to store spots:
+            - Go through an array and see which are open spaces
+            - Kind of slow since we have to check each element in array
+        - Optimal solution: Stack approach:
+            - Keep a stack where you have spots that are not occupied
+            - Have 4 stacks representing open spaces for each size
+            - Using stack we can get a constant time to retrieve a spot
+            - Search spot time complexity is O(1)
+            - After found spot put vehicle and spot on hashMap { vehicle(license plate): spot}
+    - removeVehicle(vehicle: Vehicle) : return spot vehicle is located
+        - HashMap: fast look up operation constant
+            - look up hashMap (license plate)
+            - 
+        
+
+        - returns a spots
+
+class Spot (id: Long, size: enum) // representation of spot
+
+Algorithmic approach
+//What kind of goal?  
+Make it as efficient and fast as possible to retrieve
+ and finding spot for vehicle
+    - Retrieve position most efficiently
+        - Data structure consideration
+            - 
