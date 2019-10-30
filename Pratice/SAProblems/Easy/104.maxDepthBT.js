@@ -34,3 +34,29 @@ var maxDepth = function(root) {
   return Math.max(maxDepth(root.left) + 1, maxDepth(root.right)+1);
     
 };
+
+var maxDepth = function(root) {
+  if (root ===null) return 0;
+let stack = [root];
+let heightVal = [1];
+
+let max = 0;
+
+while(stack.length) {
+  let node = stack.pop();
+  let height = heightVal.pop();
+  
+  max = Math.max(height, max);
+
+  if (node.left!==null) {
+    stack.push(node.left);
+    heightVal.push(height+1);
+  }
+
+  if(node.right!==null) {
+    stack.push(node.right);
+    heightVal.push(height+1);
+  }
+}
+return max;
+}
