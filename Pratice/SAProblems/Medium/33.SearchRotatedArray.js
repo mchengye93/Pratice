@@ -22,6 +22,9 @@ Output: -1
 */
 
 function search(nums, target) {    
+    let pivotIdx = pivot(nums);
+
+    return Math.max(binarySearch(nums,target,0,pivotIdx-1), binarySearch(nums,target,pivotIdx,nums.length-1));
 
 }
 let pivot = (nums) => {
@@ -45,6 +48,17 @@ let pivot = (nums) => {
     }
 }
 
-let binarySearch = (nums,left,right) => {
+let binarySearch = (nums,target,left,right) => {
     
+    while (left <= right) {
+        let mid = Math.floor((left+right)/2);
+        if (nums[mid] === target) return mid;
+
+        if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
 }
