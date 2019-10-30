@@ -35,5 +35,27 @@ Bonus points if you could solve it both recursively and iteratively.
  * @return {boolean}
  */
 var isSymmetric = function(root) {
-   
+   return isMirror(root,root);
 };
+
+let isMirror = (p,q) => {
+   let pStack = [p];
+   let qStack = [q];
+
+   while (pStack.length > 0 && qStack.length > 0) {
+      let pNode = pStack.pop();
+      let qNode = qStack.pop();
+
+      if (!pNode && !qNode) continue;
+
+      if (!pNode || !qNode || pNode.val !== qNode.val) return false;
+
+      pStack.push(pNode.left);
+      pStack.push(pNode.right);
+
+      qStack.push(qNode.right);
+      qStack.push(qNode.left);
+
+   }
+   return true;
+}
