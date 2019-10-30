@@ -21,7 +21,27 @@ to get new method signature.
 
  //Time Complexity: O(NlogN) used sort, Space complexity: O(1) We sort inplace no extra data structure
 var merge = function(intervals) {
+    intervals.sort((a,b) => a[0]-b[0]);
 
+    let res = [intervals[0]];
+    let x = 0;
+
+    for (let i = 1 ; i < intervals.length;i++) {
+        let currIntMin = res[x][0];
+        let currIntMax = res[x][1];
+
+        let nextIntMin = intervals[i][0];
+        let nextIntMax = intervals[i][1];
+
+        if (nextIntMin <= currIntMax) {
+            res[x][0] = Math.min(currIntMin, nextIntMin);
+            res[x][1] = Math.max(currIntMax, nextIntMax);
+        } else {
+            x++;
+            res.push(intervals[i]);
+        }
+    }
+    return res;
  
 }
 
