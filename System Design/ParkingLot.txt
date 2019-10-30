@@ -62,3 +62,15 @@ Make it as efficient and fast as possible to retrieve
     - Retrieve position most efficiently
         - Data structure consideration
             - 
+
+Object oriented Design
+public class ParkingLot {
+ List <Spot> availableSpaces;
+ Array SmallCar availableSpaces;
+ Array MedCar availableSpaces;
+ Array LCar availableSpaces;
+ Array XLCar availableSpaces;
+ HashTable < Vehicle, Spot>;
+    public placeVehicle(vehicle: Vehicle);
+    pubic removeVehicle(vehicle:Vehicle);
+}
