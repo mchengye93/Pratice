@@ -1,0 +1,12 @@
+Scenario Use Cache
+- Reduce network calls
+    - In-memory cache 
+- Avoid recomputation
+    - avoiding costly recomputation
+- Reduce DB load
+
+Cache Policy (Eviction policy) -Storing relevant information in the cache
+- LRU - Least Recently Used
+    - Least used gets removed in cache
+- Avoid Thrashing - when you keep adding and kicking info from cache
+    - Worsen performance when your cache is called and never used
