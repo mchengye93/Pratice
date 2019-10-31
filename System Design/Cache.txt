@@ -34,6 +34,9 @@ Write-Back Cache Mechanism
     - Disadvantage: Very costly to evict and then get from DB (Thrashing might occur)
     - Advantage avoids difference in different cache
 
-Mixed write-though & write back Mechanism
-    
+Hybrid write-though & write back Mechanism
+    - When there is an entry that needs to be updated on DB
+    - Do not write back immediately, write onto the cache keep serving 
+    - Then after a couple of seconds take bulk data and update Db (makes only one network call)
+
 
