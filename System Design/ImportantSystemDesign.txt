@@ -358,3 +358,35 @@ Disadvantage(s): denormalization
 Data is duplicated.
 Constraints can help redundant copies of information stay in sync, which increases complexity of the database design.
 A denormalized database under heavy write load might perform worse than its normalized counterpart.
+
+SQL tuning
+SQL tuning is a broad topic and many books have been written as reference.
+
+It's important to benchmark and profile to simulate and uncover bottlenecks.
+
+Benchmark - Simulate high-load situations with tools such as ab.
+Profile - Enable tools such as the slow query log to help track performance issues.
+Benchmarking and profiling might point you to the following optimizations.
+
+Tighten up the schema
+MySQL dumps to disk in contiguous blocks for fast access.
+Use CHAR instead of VARCHAR for fixed-length fields.
+CHAR effectively allows for fast, random access, whereas with VARCHAR, you must find the end of a string before moving onto the next one.
+Use TEXT for large blocks of text such as blog posts. TEXT also allows for boolean searches. Using a TEXT field results in storing a pointer on disk that is used to locate the text block.
+Use INT for larger numbers up to 2^32 or 4 billion.
+Use DECIMAL for currency to avoid floating point representation errors.
+Avoid storing large BLOBS, store the location of where to get the object instead.
+VARCHAR(255) is the largest number of characters that can be counted in an 8 bit number, often maximizing the use of a byte in some RDBMS.
+Set the NOT NULL constraint where applicable to improve search performance.
+Use good indices
+Columns that you are querying (SELECT, GROUP BY, ORDER BY, JOIN) could be faster with indices.
+Indices are usually represented as self-balancing B-tree that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time.
+Placing an index can keep the data in memory, requiring more space.
+Writes could also be slower since the index also needs to be updated.
+When loading large amounts of data, it might be faster to disable indices, load the data, then rebuild the indices.
+Avoid expensive joins
+Denormalize where performance demands it.
+Partition tables
+Break up a table by putting hot spots in a separate table to help keep it in memory.
+Tune the query cache
+In some cases, the query cache could lead to performance issues.
