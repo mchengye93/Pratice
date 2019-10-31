@@ -1,0 +1,3 @@
+Features
+- Distribute incoming traffic to netwrok by efficiently distributing across multiple servers
+- Reliability & High Availability is maintained by redirecting request only to servers available.
