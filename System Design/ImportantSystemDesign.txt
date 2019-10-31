@@ -29,3 +29,7 @@ Topics covered:
             - Cached Objects
                 - Saving instance as objects makes it easy to get back and delete from cache
     Asynchronism
+        - The frontend of your website sends a job onto a job queue and immediately signals back to the user: your job is in work, please continue to the browse the page. 
+        - The job queue is constantly checked by a bunch of workers for new jobs. If there is a new job then the worker does the job and after some minutes sends a signal that the job was done. 
+        - RabbitMQ
+            -one of many systems which help to implement async processing
