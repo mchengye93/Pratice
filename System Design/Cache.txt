@@ -25,8 +25,15 @@ Where to place cache
         - You can scale it independently
         - More accurate
 
-Write Through Cache
+Write Through Cache Mechanism
     - Update entry in cache and then updating database
-Write-Back Cache
+    - Problem: Update in one server cache but not in others
+Write-Back Cache Mechanism
     - Evict changed key
     - If key is search then it will hit database and then make an entry in the cache
+    - Disadvantage: Very costly to evict and then get from DB (Thrashing might occur)
+    - Advantage avoids difference in different cache
+
+Mixed write-though & write back Mechanism
+    
+
