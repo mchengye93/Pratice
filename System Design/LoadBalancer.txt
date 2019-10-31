@@ -1,3 +1,22 @@
 Features
 - Distribute incoming traffic to netwrok by efficiently distributing across multiple servers
+    - Redistribute load amongs other servers
 - Reliability & High Availability is maintained by redirecting request only to servers available.
+    - Service is always running because if one server is down request will go to other running servers.
+-Ease of use in adding and removing servers in the netwrok as per demand.
+    - Allow easy adding servers (X-mas requires more server running)
+
+Load Balancing Algorithms
+-Round Robin
+    - Sequential request distribution ( 1, 2, 3, 4) = follows an order
+-Least connection
+    - Request sent to the least used server in the network 
+        - Get information from servers to give to one with least connection
+-IP Hash
+    - Request sent to the server based on Client IP
+        - Specific servers needs to be given preference over others
+        - 
+
+Sticky Sessions
+    - Keep a sessionId direct to server 1 so every time this sessionid makes a request it goes to same server 1 ( sticky session)
+    
