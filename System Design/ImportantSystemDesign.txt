@@ -1,1 +1,31 @@
 https://github.com/donnemartin/system-design-primer#system-design-topics-start-here
+
+Scalability
+    - Vertical scaling
+    - Horizontal scaling
+    - Caching
+    - Load balancing
+    - Database replication
+    - Database partitioning
+Topics covered:
+    Clones
+    Databases
+    - MySQL, SQL -
+        - master-slave replication (read from slaves, write to master)
+        - Needs to start introduce sharding
+        - Joins are expensive
+    - Change from SQL to NoSQL
+        - Performance increases since no joins required 
+        - Soon getting data will be slow and you need to introduce Caching
+    Caches
+        - in memory cache - Memcached or Redis
+        - Cache - simple key-value store 
+        - resides as buffering layer between application and data storage
+        - Cache is lighting-fast so you should check before going to Database
+        Patterns of Caching Data
+            - Cached Database Queries
+                - Saving queries result into cache
+                - Problem: When a piece of data changes (table cell) you will need to delete all cache queries that include that table cell.
+            - Cached Objects
+                - Saving instance as objects makes it easy to get back and delete from cache
+    Asynchronism
