@@ -1,0 +1,34 @@
+Skills Developements
+
+1. Database
+    - SQL vs. NoSQL
+    - Queries
+2. Load balancer
+    - Common technique layer 4 - networking layer 
+        - Load balance based on packages received
+        - Take a look at IP address and 
+        - Health check
+            - Pings server to check if they are ok
+            - Latency now where they are located
+        - Round robin
+            - Send request to all servers that are available
+            - Downside: first two overloaded with traffic it will still send because it is their turn
+        - Least connection
+            - Forward to those are have low number of connections
+        - State between multiple request
+            - Load balancer keep state and forward request to same backend server
+        -Source algorithm
+            - Load balancer picks hask function based on available backend servers
+
+    - Layer 7
+        - Load balancer is aware HTTP protocol and look into header and make decisions
+        - Advantage: load balancer will be able to load request to same backend
+    - DNS load balancing
+        - URL to an IP address make decision to where you route this
+        - Google uses this to reroute to closest server
+3. Async workers
+4. Distributed system
+5. HDFS
+    - 
+6. Spark
+

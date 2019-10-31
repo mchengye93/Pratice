@@ -1,0 +1,8 @@
+1. Keywords
+    - Customers
+    - Products
+    - Orders
+    - Payment methods
+    - Shop owners
+    - Isolation
+    
