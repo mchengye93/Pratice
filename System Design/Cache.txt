@@ -10,3 +10,17 @@ Cache Policy (Eviction policy) -Storing relevant information in the cache
     - Least used gets removed in cache
 - Avoid Thrashing - when you keep adding and kicking info from cache
     - Worsen performance when your cache is called and never used
+
+Where to place cache
+- Cache in server
+    - Cache takes up in memory of server
+    - If servers fails then in memory cache also fails
+    - Cache information varies from server
+    - Benefit is extremely fast
+- Global cache
+    - Slightly slower but has higher accuracy
+    - Cache maintains data consistency
+    - Limited in size
+    - Benefit: Avoid query on database but more on cache
+        - You can scale it independently
+        - More accurate
