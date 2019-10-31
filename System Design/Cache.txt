@@ -24,3 +24,9 @@ Where to place cache
     - Benefit: Avoid query on database but more on cache
         - You can scale it independently
         - More accurate
+
+Write Through Cache
+    - Update entry in cache and then updating database
+Write-Back Cache
+    - Evict changed key
+    - If key is search then it will hit database and then make an entry in the cache
