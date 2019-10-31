@@ -280,3 +280,15 @@ Systems such as Consul, Etcd, and Zookeeper can help services find each other by
 Disadvantage(s): application layer
 Adding an application layer with loosely coupled services requires a different approach from an architectural, operations, and process viewpoint (vs a monolithic system).
 Microservices can add complexity in terms of deployments and operations.
+
+Database
+Relational database management system (RDBMS)
+A relational database like SQL is a collection of data items organized in tables.
+
+ACID is a set of properties of relational database transactions.
+
+Atomicity - Each transaction is all or nothing
+Consistency - Any transaction will bring the database from one valid state to another
+Isolation - Executing transactions concurrently has the same results as if the transactions were executed serially
+Durability - Once a transaction has been committed, it will remain so
+There are many techniques to scale a relational database: master-slave replication, master-master replication, federation, sharding, denormalization, and SQL tuning.
